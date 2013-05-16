@@ -1,0 +1,45 @@
+﻿<TabItem x:Name="GameView1" x:Class="MushyExtensionMethods.GameView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="525"
+	>
+    <Grid>
+
+        <!--resizing settings-->
+        <Grid.RowDefinitions>
+            <!--output box grows to fit available space-->
+            <RowDefinition Height="*"/>
+
+            <!--input box takes at least 100-->
+            <RowDefinition Height="100"/>
+
+            <!--Telnet and MSDP message windows are fixed height-->
+            <!--<RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>-->
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--output box-->
+            <FlowDocumentScrollViewer x:Name="_output" Grid.Column="0" Grid.Row="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Courier New" FontSize="11" Margin="0,0,0,1">
+                <FlowDocument Background="Black" Foreground="Lightgray">
+                    <Paragraph/>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        
+        <!--input box-->
+        <TextBox x:Name="_input" Background="Black" Foreground="LightGray" Grid.Column="0" Grid.Row="1" KeyDown="inputBox_KeyDown" BorderThickness="3" FontFamily="Courier New" FontSize="14" />
+
+        <!--header for the telnet output box-->
+        <!--<Label Grid.Column="0" Grid.Row="2" Background="SkyBlue" Content="Telnet Messages:"/>-->
+
+        <!--telnet output box-->
+        <!--<TextBox x:Name="telnetOutputBox" Grid.Column="0" Grid.Row="3" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>-->
+
+    </Grid>
+</TabItem>
